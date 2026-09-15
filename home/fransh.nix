@@ -23,7 +23,7 @@
       gc = "git commit -m";
       gp = "git push";
       hyconf = "vim /etc/nixos/home/hyprland/hyprland.conf";
-      rebuild = "sudo nixos-rebuild switch --flake ~/Documents/nixOS#desktop"
+      nixrebuild = "sudo nixos-rebuild switch --flake ~/Documents/nixOS#desktop";
       hyreload = "hyprctl reload";
       open = "thunar";
       sh = "TERM=xterm-256color ssh";
