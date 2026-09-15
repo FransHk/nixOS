@@ -1,0 +1,46 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 34,
+  "margin-top": 8,
+  "margin-left": 10,
+  "margin-right": 10,
+  "spacing": 8,
+  "modules-left": ["custom/nixicon", "clock", "cpu", "memory", "disk"],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": ["network", "tray", "pulseaudio/slider", "pulseaudio"],
+  "custom/nixicon": {
+    "format": "",
+    "on-click": "wofi --show drun",
+    "tooltip": false
+  },
+  "clock": {
+    "timezone": "Europe/Amsterdam",
+    "format": "{:%a %d %b  %I:%M}",
+    "tooltip-format": "{calendar}",
+    "calendar": { "mode": "month" }
+  },
+  "cpu": { "format": "{usage}% ", "tooltip-format": "CPU usage {usage}%\\n{cores}" },
+  "memory": { "format": "{}% 󰍛", "tooltip-format": "RAM usage: {used} / {total} ({percentage}%)" },
+  "disk": { "format": "{percentage_used}% ", "tooltip-format": "Used disk space {used} / {total} ({percentage_used}%)" },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": { "default": "", "active": "" },
+    "persistent-workspaces": { "*": 2 },
+    "disable-scroll": true,
+    "all-outputs": true,
+    "show-special": true
+  },
+  "pulseaudio/slider": { "format": "{volume}%", "format-muted": " MUTE", "step": 5, "tooltip": false },
+  "pulseaudio": { "format": "{volume}% {icon}", "format-muted": "x {format_source}", "format-icons": { "default": ["", ""] } },
+  "network": {
+    "format-wifi": "{essid} 󰖩",
+    "format-ethernet": "Ethernet 󰈀",
+    "format-linked": "Linked 󰈀",
+    "format-disconnected": "Offline 󰖪",
+    "tooltip-format": "{ifname} via {gwaddr}\\n{ipaddr}/{cidr}",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)\\n{ipaddr}/{cidr}",
+    "max-length": 24
+  },
+  "tray": { "icon-size": 15, "spacing": 10 }
+}

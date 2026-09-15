@@ -1,0 +1,36 @@
+* {
+  border: none;
+  font-family: "JetBrainsMono Nerd Font", sans-serif;
+  font-size: 13px;
+  min-height: 0;
+}
+window#waybar { background: transparent; color: #1f2937; }
+#custom-nixicon, #clock, #cpu, #memory, #disk, #pulseaudio, #pulseaudio-slider, #network, #tray {
+  color: #1f2937;
+  margin: 6px 0;
+  padding: 0 14px;
+  min-height: 28px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+#custom-nixicon { font-size: 18px; color: #5277c3; padding: 0 16px 0 14px; }
+#clock, #pulseaudio { font-weight: 600; }
+#pulseaudio { min-width: 55px; }
+#pulseaudio-slider { min-width: 50px; }
+#pulseaudio-slider slider { opacity: 0; min-height: 0; min-width: 0; }
+#pulseaudio-slider trough { min-width: 80px; min-height: 4px; border-radius: 999px; background: rgba(148, 163, 184, 0.22); }
+#pulseaudio-slider highlight { min-height: 4px; border-radius: 999px; background: #111827; }
+#workspaces {
+  background: rgba(255, 255, 255, 0.62);
+  border-radius: 999px;
+  margin: 6px 0;
+  padding: 0 8px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+#workspaces button { color: rgba(31, 41, 55, 0.5); background: transparent; padding: 0 6px; }
+#workspaces button.occupied { color: rgba(31, 41, 55, 0.72); }
+#workspaces button.active, #workspaces button:hover { color: #111827; }
+#tray { padding: 0 12px; }
