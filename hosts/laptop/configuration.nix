@@ -12,4 +12,6 @@
   services.power-profiles-daemon.enable = true;
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 }
