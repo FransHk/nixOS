@@ -10,17 +10,25 @@
   };
 
   outputs = { self, nixpkgs, home-manager, ... }:
+    # Define local names
     let
       system = "x86_64-linux";
       user = "fransh";
+
+      # This builds the mkHost function. It will accept
+      # the 'host' parameter (provided by the caller in 'in' below)
+      # e.g. '#laptop' and build a nixosSystem based on that.
       mkHost = host: nixpkgs.lib.nixosSystem {
-        inherit system;
+        inherit system; # shorthand for system = system (defined above)
         specialArgs = { inherit user; };
         modules = [
           ./hosts/${host}/configuration.nix
           home-manager.nixosModules.home-manager
         ];
       };
+
+    # The 'in' inputs to this output function that builds
+    # on the locals defined above.
     in {
       nixosConfigurations = {
         desktop = mkHost "desktop";
