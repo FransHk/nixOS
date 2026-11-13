@@ -57,7 +57,7 @@
     "hypr/hyprpaper.conf".text = ''
       wallpaper {
         monitor = *
-        path = /etc/nixos/assets/archy.jpg
+        path = ${../assets/archy.jpg}
       }
       splash = false
     '';
