@@ -3,6 +3,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/base.nix
+    ../../modules/gaming.nix
   ];
 
   networking.hostName = "laptop";
