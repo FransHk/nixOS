@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
   home.username = "fransh";
   home.homeDirectory = "/home/fransh";
@@ -63,6 +63,8 @@
       splash = false
     '';
     "hypr/wallpapers/archy.jpg".source = ../assets/archy.jpg;
+    # Host modules can override this with machine-specific startup commands.
+    "hypr/host.conf".text = lib.mkDefault "";
     "waybar/config.jsonc".source = ./waybar/config.jsonc;
     "waybar/style.css".source = ./waybar/style.css;
     "kitty/kitty.conf".source = ./kitty/kitty.conf;

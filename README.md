@@ -38,7 +38,9 @@ Git. Update inputs later with `nix flake update` from the configuration root.
 
 ## Laptop scope
 
-Only `hosts/laptop/configuration.nix` enables power management, power profiles,
-Bluetooth and Blueman. Brightness key bindings and `brightnessctl` are left as
-explicit commented lines in `home/fransh.nix` and `home/hyprland.conf`, ready
-to enable once the laptop is migrated.
+Only the laptop host imports `modules/laptop.nix`. That module enables power
+management, power profiles, Bluetooth and Blueman, starts the Blueman tray
+applet, and switches between the built-in display and external monitors.
+Brightness key bindings and `brightnessctl` are left as explicit commented
+lines in `home/fransh.nix` and `home/hyprland.conf`, ready to enable once the
+laptop is migrated.
