@@ -32,7 +32,7 @@
     };
   };
 
-
+  # Make sure they share clipboard
   programs.neovim = {
     enable = true;
 
@@ -70,7 +70,4 @@
     "hypr/hyprland.conf".source = ./hyprland/hyprland.conf;
   };
 
-  # Laptop-only Home Manager additions, to add when desired:
-  # home.packages = with pkgs; [ brightnessctl ];
-  # Bind XF86MonBrightness{Up,Down} in home/hyprland/hyprland.conf.
 }
