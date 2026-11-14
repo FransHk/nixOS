@@ -29,6 +29,7 @@
       sh = "TERM=xterm-256color ssh";
       untar = "tar -xvf";
       totar = "tar -cvf";
+      nv = "nvim";
     };
   };
 
