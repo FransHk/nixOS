@@ -33,6 +33,11 @@
     };
   };
 
+  programs.ssh = {
+    enable = true;
+    matchBlocks."*".user = "oddity";
+  };
+
   # Make sure they share clipboard
   programs.neovim = {
     enable = true;
