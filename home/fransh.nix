@@ -7,7 +7,7 @@
   home.packages = with pkgs; [
     waybar hyprlock hyprpaper wofi kitty firefox thunar zed-editor
     grim slurp swappy pavucontrol networkmanagerapplet upower
-    nerd-fonts.jetbrains-mono git wl-clipboard codex gh
+    nerd-fonts.jetbrains-mono git wl-clipboard codex gh sshfs
   ];
   fonts.fontconfig.enable = true;
 
@@ -23,7 +23,8 @@
       gc = "git commit -m";
       gp = "git push";
       hyconf = "vim /etc/nixos/home/hyprland/hyprland.conf";
-      nixrebuild = "sudo nixos-rebuild switch --flake ~/Documents/nixOS#desktop";
+      mount="sudo sshfs -o 'allow_other,default_permissions'"; # mnt fs (remote, local)
+      unmount="sudo umount -f"; # unmount fs
       hyreload = "hyprctl reload";
       open = "thunar";
       sh = "TERM=xterm-256color ssh";
