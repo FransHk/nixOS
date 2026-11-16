@@ -42,9 +42,17 @@
     '';
   };
 
+  # Set to a default white cursor with black outline
+  home.pointerCursor = {
+     enable = true;
+     name = "Vanilla-DMZ"; # Replace with your cursor theme name
+     package = pkgs.vanilla-dmz; # Replace with your cursor package
+     size = 24; # Desired size in pixels
+     gtk.enable = true;
+     x11.enable = true;
+   };
 
-
-
+  # Enable starship and loads its configuration TOML
   programs.starship = {
     enable = true;
     enableBashIntegration = true;
@@ -62,9 +70,6 @@
       }
       splash = false
     '';
-    "hypr/wallpapers/archy.jpg".source = ../assets/archy.jpg;
-    # Host modules can override this with machine-specific startup commands.
-    "hypr/host.conf".text = lib.mkDefault "";
     "waybar/config.jsonc".source = ./waybar/config.jsonc;
     "waybar/style.css".source = ./waybar/style.css;
     "kitty/kitty.conf".source = ./kitty/kitty.conf;
