@@ -69,6 +69,12 @@ let
   };
 in
 {
+  # The laptop needs 32-bit graphics support for Steam and other games.
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
   powerManagement.enable = true;
   services.power-profiles-daemon.enable = true;
 
@@ -82,6 +88,15 @@ in
     xdg.configFile."hypr/host.conf".text = ''
       exec-once = ${pkgs.blueman}/bin/blueman-applet
       exec-once = ${monitor-hotplug}/bin/monitor-hotplug
+
+      # Laptop media keys. The repeat flag makes held volume/brightness keys
+      # behave naturally; the lock flag keeps them available on the lockscreen.
+      bindel = , XF86AudioLowerVolume, exec, ${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+      bindel = , XF86AudioRaiseVolume, exec, ${pkgs.wireplumber}/bin/wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+
+      bindl = , XF86AudioMute, exec, ${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+      bindl = , XF86AudioMicMute, exec, ${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+      bindel = , XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl set 5%-
+      bindel = , XF86MonBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl set 5%+
     '';
   };
 }
