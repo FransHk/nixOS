@@ -23,7 +23,8 @@
       gc = "git commit -m";
       gp = "git push";
       hyconf = "vim /etc/nixos/home/hyprland/hyprland.conf";
-      mount="sudo sshfs -o 'allow_other,default_permissions'"; # mnt fs (remote, local)
+      mount="sudo sshfs -o \'allow_other,default_permissions\'"; # mnt fs (remote, local)
+      nixedit="zeditor ~/Documents/nixOS/";
       unmount="sudo umount -f"; # unmount fs
       hyreload = "hyprctl reload";
       open = "thunar";
