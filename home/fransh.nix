@@ -8,6 +8,7 @@
     waybar hyprlock hyprpaper wofi kitty firefox thunar zed-editor
     grim slurp swappy pavucontrol networkmanagerapplet upower
     nerd-fonts.jetbrains-mono git wl-clipboard codex gh
+    tailscale
   ];
   fonts.fontconfig.enable = true;
 
