@@ -69,7 +69,7 @@ let
   };
 in
 {
-  # The laptop needs 32-bit graphics support for Steam and other games.
+  # The laptop needs 32-bit graphics for some visual applications
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
@@ -78,6 +78,7 @@ in
   powerManagement.enable = true;
   services.power-profiles-daemon.enable = true;
 
+  # Remove applet connect/disconnect notification
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 

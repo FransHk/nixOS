@@ -66,6 +66,11 @@
     settings = builtins.fromTOML (builtins.readFile ./starship/starship.toml);
   };
 
+  # Disable blueman pop-ups when connected/disconnected
+  dconf.settings."org/blueman/general" = {
+    plugin-list = [ "!ConnectionNotifier" ];
+  };
+
   # The configurations sources here are symlinked to the ./config
   # dir so that they are available to e.g. hyprland, etc.
   xdg.configFile = {
