@@ -41,6 +41,7 @@ Git. Update inputs later with `nix flake update` from the configuration root.
 Only the laptop host imports `modules/laptop.nix`. That module enables power
 management, power profiles, Bluetooth and Blueman, starts the Blueman tray
 applet, and switches between the built-in display and external monitors.
-Brightness key bindings and `brightnessctl` are left as explicit commented
-lines in `home/fransh.nix` and `home/hyprland.conf`, ready to enable once the
-laptop is migrated.
+
+## Todo
+
+- Get rid of the hacky monitor hotplug that listens and switches to monitor when plugged.
