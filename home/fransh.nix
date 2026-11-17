@@ -32,6 +32,7 @@
       untar = "tar -xvf";
       totar = "tar -cvf";
       nv = "nvim";
+      ml2 = "cd ~/Documents/oddity/ml2/; nix develop;";
     };
   };
 
