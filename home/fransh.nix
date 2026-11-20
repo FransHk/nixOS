@@ -12,6 +12,10 @@
   fonts.fontconfig.enable = true;
 
   programs.home-manager.enable = true;
+  programs.git = {
+    enable = true;
+    settings.push.autoSetupRemote = true;
+  };
   programs.bash = {
     enable = true;
     enableCompletion = true;
