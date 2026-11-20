@@ -1,3 +1,6 @@
+# Laptop.nix contains all laptop-specific system services that we do not want
+# on our desktop machine. It uses a let-in structure because we want to specifically
+# define the monitor hotplug.
 { pkgs, user, ... }:
 let
   monitor-hotplug = pkgs.writeShellApplication {
@@ -76,6 +79,7 @@ in
     enable32Bit = true;
   };
 
+  # Laptop power management
   powerManagement.enable = true;
   services.power-profiles-daemon.enable = true;
 
@@ -83,16 +87,16 @@ in
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
+  # Set-up the monitor hotplug
   home-manager.users.${user} = {
     home.packages = [ monitor-hotplug ];
 
-    # Waybar already provides a system tray, so blueman-applet appears there.
+    # Laptop media keys. The repeat flag makes held volume/brightness keys
+    # behave naturally; the lock flag keeps them available on the lockscreen.
     xdg.configFile."hypr/host.conf".text = ''
       exec-once = ${pkgs.blueman}/bin/blueman-applet
       exec-once = ${monitor-hotplug}/bin/monitor-hotplug
 
-      # Laptop media keys. The repeat flag makes held volume/brightness keys
-      # behave naturally; the lock flag keeps them available on the lockscreen.
       bindel = , XF86AudioLowerVolume, exec, ${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
       bindel = , XF86AudioRaiseVolume, exec, ${pkgs.wireplumber}/bin/wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+
       bindl = , XF86AudioMute, exec, ${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle

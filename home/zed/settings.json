@@ -16,8 +16,12 @@
   "file_scan_exclusions": ["**/.venv", "**/.venv/**"],
   "ui_font_size": 14,
   "buffer_font_size": 14.0,
-  "theme": { "mode": "light", "light": "Catppuccin Latte", "dark": "Catppuccin Mocha" },
+  "theme": "Catppuccin Mocha",
   "lsp": {
+
+
+
+
     "pyrefly": { "settings": { "python": { "pythonPath": ".venv/bin/python" }, "pyrefly": { "project_includes": ["**/*.py"], "project_excludes": ["**/.[!/.]*", "**/*venv/**"], "search_path": ["."], "ignore_errors_in_generated_code": true } } },
     "ruff": { "initialization_options": { "settings": { "logLevel": "debug" } } }
   },

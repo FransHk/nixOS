@@ -1,3 +1,6 @@
+# Base.nix is imported by both desktop/configuration.nix
+# or laptop/configuration.nix. It is therefore the place
+# for the shared base set of system configurations
 { pkgs, user, ... }:
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
