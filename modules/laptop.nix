@@ -7,6 +7,7 @@ let
       hyprland
       jq
       socat
+      brightnessctl
     ];
     text = ''
       internal_monitor() {
@@ -44,7 +45,7 @@ let
           )
           hyprctl keyword monitor "$internal,disable"
         else
-          hyprctl keyword monitor "$internal,preferred,auto,1"
+          hyprctl keyword monitor "$internal,preferred,auto,2"
         fi
       }
 
